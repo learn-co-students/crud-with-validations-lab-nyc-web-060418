@@ -1,0 +1,12 @@
+<%= link_to :"Create", new_song_path %>
+
+<% @songs.each do |song| %>
+<%= song.title %>
+<%= song.released %>
+<%= song.release_year %>
+<%= song.artist_name %>
+<%= song.genre %>
+<%= link_to :"View", song %>
+<%= link_to :"Edit", edit_song_path(song) %>
+<%= link_to :"Delete", song, method: :delete, data: {confirm: "Really?"} %>
+<% end %>
